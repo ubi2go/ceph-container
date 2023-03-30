@@ -11,8 +11,8 @@ Password: **********
 Login Succeeded!
 ```
 
-You will then be able to run `podman pull registry.redhat.io/ubi9/ubi:latest`
-to fetch the base image.
+You will then be able to run `podman pull
+registry.redhat.io/ubi9/ubi-minimal:latest` to fetch the base image.
 
 ## Composing the Dockerfile
 
@@ -61,10 +61,10 @@ gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release' >> /etc/yum.repos.d
 
 RUN printf '[odcs]\n\
 name = odcs\n\
-baseurl = http://download.eng.bos.redhat.com/odcs/prod/odcs-12345678/compose/Temporary/x86_64/os/\n\
+baseurl = http://download.eng.bos.redhat.com/odcs/prod/odcs-12345678/compose/Temporary/$basearch/os/\n\
 enabled = 1\n\
 gpgcheck = 0\n\
-' >> /etc/yum.repos.d/rhceph-6-rhel-9.repo
+' >> /etc/yum.repos.d/odcs.repo
 ```
 
 **Note: this uses an internal Pulp server, so your computer must be on Red
