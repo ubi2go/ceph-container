@@ -22,9 +22,12 @@
 
 build:
 	@echo === docker build $(DAEMON_IMAGE)
-	@docker build $(BUILD_ARGS) -t $(DAEMON_IMAGE) .
+	#@docker build $(BUILD_ARGS) -t $(DAEMON_IMAGE) .
+	@podman build $(BUILD_ARGS) -t $(DAEMON_IMAGE) .
 
-push: ; @docker push $(DAEMON_IMAGE)
+#push: ; @docker push $(DAEMON_IMAGE)
+push: ; @podman push $(DAEMON_IMAGE)
 clean:
 # Don't fail if can't clean; user may have removed the image
-	@docker rmi $(DAEMON_IMAGE) || true
+	#@docker rmi $(DAEMON_IMAGE) || true
+	@podman rmi $(DAEMON_IMAGE) || true

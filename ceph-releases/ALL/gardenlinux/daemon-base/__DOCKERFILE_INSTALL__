@@ -1,0 +1,12 @@
+# add the necessary repos
+#    echo "deb https://repo.gardenlinux.io/gardenlinux today/main amd64" >> /etc/apt/sources.list \
+#    && echo "deb [signed-by=/etc/apt/trusted.gpg.d/gardenlinux.asc] https://repo.gardenlinux.io/gardenlinux today main" >> /etc/apt/sources.list \
+#    && 
+#    sed -i 's/deb.debian.org/cdn-aws.deb.debian.org/g' /etc/apt/sources.list \
+#    && 
+#    sed -i 's/testing/stable/g' /etc/apt/apt.conf.d/default-testing \
+    rm /etc/apt/apt.conf.d/default-testing \
+    && sed -i 's/testing/bookworm/g' /etc/apt/sources.list \
+    && DEBIAN_FRONTEND=noninteractive apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -yy --force-yes --no-install-recommends \
+    __CEPH_BASE_PACKAGES__

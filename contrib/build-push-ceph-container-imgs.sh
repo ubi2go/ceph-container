@@ -89,10 +89,10 @@ function install_docker {
   if [[ -x /usr/bin/yum ]] ; then
     sudo yum install -y docker
   else
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-    sudo apt-get update
-    sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y --force-yes docker-ce
+#    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+#    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+#    sudo apt-get update
+#    sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y --force-yes docker-ce
   fi
   sudo systemctl unmask docker
   sudo systemctl start docker || sudo systemctl restart docker
