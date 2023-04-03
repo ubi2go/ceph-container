@@ -14,8 +14,10 @@
         smartmontools \
         nvme-cli \
 #        systemd-udev \
+        udev \
 #        libstoragemgmt \
 #        sg3_utils \
+        sg3-utils \
 #        procps-ng \
         procps \
         __RADOSGW_PACKAGES__ \
