@@ -16,6 +16,7 @@
 #        systemd-udev \
         udev \
 #        libstoragemgmt \
+        libstoragemgmt1 \
 #        sg3_utils \
         sg3-utils \
 #        procps-ng \
